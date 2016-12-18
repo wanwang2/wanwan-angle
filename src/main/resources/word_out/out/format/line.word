@@ -1,0 +1,8 @@
+<th app-locale="VVControl.VVControl">control信息vvvvvvvvv/</th>
+<th app-locale="VVControl.type">类型</th>
+<th app-locale="VVControl.age">账龄</th>
+<th app-locale="VVControl.control">控制</th>
+<th app-locale="VVType.VVType">type信息vvvvvvvvv/</th>
+<th app-locale="VVType.type">类型</th>
+<th app-locale="VVType.tee">茶</th>
+<th app-locale="@field.@e">@c</th>
