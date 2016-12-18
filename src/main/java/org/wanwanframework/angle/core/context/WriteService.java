@@ -1,7 +1,7 @@
 package org.wanwanframework.angle.core.context;
 
 import org.wanwanframework.angle.core.FileModel;
-import org.wanwanframework.log.Log;
+import org.wanwanframwork.file.Log;
 
 /**
  * 需要写多个文件时才调用这个类

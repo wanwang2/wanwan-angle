@@ -5,8 +5,8 @@ import java.util.Properties;
 
 import org.wanwanframework.angle.core.FilterImpl;
 import org.wanwanframework.angle.core.context.Filterable;
-import org.wanwanframework.log.Log;
 import org.wanwanframwork.file.LineTool;
+import org.wanwanframwork.file.Log;
 
 public class WordFilter extends FilterImpl implements Filterable{
 	

@@ -2,7 +2,7 @@ package org.wanwanframework.angle.core.annotation;
 
 import java.util.Properties;
 
-import org.wanwanframework.log.Log;
+import org.wanwanframwork.file.Log;
 import org.wanwanframwork.file.PropertyUtil;
 
 /**
