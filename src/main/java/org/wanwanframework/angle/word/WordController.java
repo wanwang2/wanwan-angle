@@ -28,8 +28,7 @@ public class WordController extends Controller implements Control{
    
 	/**
 	 * ./src/resource/template/test.template
-	 * 
-	 * @param model
+	 *
 	 */
 	public void read() {
 		WordMode module = (WordMode)model;
@@ -50,7 +49,6 @@ public class WordController extends Controller implements Control{
 	 * 读取文件夹中的内容
 	 * @param templateType
 	 * @param module
-	 * @param models
 	 * @return
 	 */
 	public String toFile(String templateType, String module, FileModel vo){
