@@ -3,7 +3,7 @@ package org.wanwanframework.angle.core.annotation;
 import java.util.Properties;
 
 import org.wanwanframwork.file.Log;
-import org.wanwanframwork.file.PropertyUtil;
+import org.wanwanframwork.file.resource.PropertyUtil;
 
 /**
  * 元数据值获取器

@@ -7,7 +7,7 @@ import org.wanwanframework.angle.core.FileVo;
 import org.wanwanframework.angle.core.context.Controller;
 import org.wanwanframework.angle.core.param.Path;
 import org.wanwanframwork.file.FileUtil;
-import org.wanwanframwork.file.PropertyUtil;
+import org.wanwanframwork.file.resource.PropertyUtil;
 
 /**
  * 文件夹分发功能
