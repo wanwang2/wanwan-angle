@@ -14,7 +14,7 @@ public class FolderMode extends FileModel {
 	public FolderMode(String fileTemplate, Properties property) {
 		super(fileTemplate, property); 
 		this.initFileModel(property.getProperty("moduleFiles"));
-		this.folderList = FileUtil.getFileList(fileTemplate);
+		this.folderList = FileUtil.getFilesString(fileTemplate);
 	}
 	
 	public void initFileModel(String moduleFiles){

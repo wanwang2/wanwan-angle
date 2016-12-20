@@ -20,7 +20,7 @@ public class ListMode extends FileModel {
 	public ListMode(String templateDir, Properties property) {
 		super(templateDir, property);
 		this.initFileModel(property.getProperty("moduleFiles"));
-		this.templates = FileUtil.getFileList(templateDir);
+		this.templates = FileUtil.getFilesString(templateDir);
 	}
 
 	public void initFileModel(String moduleFiles) {
