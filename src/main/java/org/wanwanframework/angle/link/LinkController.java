@@ -34,8 +34,7 @@ public class LinkController {
 
 	/**
 	 * ./src/resource/template/test.template
-	 * 
-	 * @param model
+	 *
 	 */
 	public void read() {
 		String[] tempFiles = model.getTemplates().split("/");
@@ -56,7 +55,6 @@ public class LinkController {
 	 * 读取文件夹中的内容
 	 * @param templateType
 	 * @param module
-	 * @param models
 	 * @return
 	 */
 	private String toFile(String templateType, String module, FileVo fileVo){
