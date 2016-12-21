@@ -45,7 +45,7 @@ public class ListWriteService extends WriteService {
 			moduleFile = ((ListMode) model).getFileModels()[i].getName();
 			content = ((ListMode) model).getFileModels()[i].getContent();
 			this.file = dir + "/" + filter.toModulez(append, moduleFile);
-			FileUtil.createFile(this.file, dir, content);
+			FileUtil.createFile(this.file, content);
 		}
 	}
 

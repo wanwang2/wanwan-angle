@@ -40,7 +40,7 @@ public class LinkWriteService {
 			content += model.getFileModels()[i].getContent() + "\r\n";
 		}
 		try {
-			FileUtil.createFile(file, dir, content);
+			FileUtil.createFile(file, content);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
