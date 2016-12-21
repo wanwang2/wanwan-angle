@@ -49,7 +49,7 @@ public class WordWriteService extends WriteService {
 		}
 		System.out.println(content);
 		try {
-			FileUtil.createFile(this.file, dir, content);
+			FileUtil.createFile(this.file, content);
 		} catch (IOException e) { 
 			e.printStackTrace();
 		}
