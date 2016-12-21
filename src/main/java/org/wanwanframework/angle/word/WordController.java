@@ -24,8 +24,7 @@ public class WordController extends Controller implements Control{
  
 	private Scanner in;
 	private WriteService view = new WordWriteService();
-	private String path;
-   
+
 	/**
 	 * ./src/resource/template/test.template
 	 *

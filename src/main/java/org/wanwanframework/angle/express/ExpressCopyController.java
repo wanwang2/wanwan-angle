@@ -19,10 +19,12 @@ public class ExpressCopyController {
 	public static final String FILE_PROPERTY = "@.properties";
 	
 	private Express express = new Express();
+	private String path;
 
 	public void init() {
-		readFile(Path.RESOURCE_LIST + FILE_EXPRESS);
-		readDir(Path.RESOURCE_LIST);
+		path = ExpressCopyController.class.getResource(Path.RESOURCE_LIST).getPath();
+		readFile(path + "/" + FILE_EXPRESS);
+		readDir(path);
 		write();
 	}
 
