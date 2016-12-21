@@ -18,8 +18,11 @@ public class ListMode extends FileModel {
 	private String templates; // 代码模板字符串集
 	
 	public ListMode(String templateDir, Properties property) {
-		super(templateDir, property);
-		this.initFileModel(property.getProperty("moduleFiles"));
+		super(templateDir, property);	
+		String moduleFiles = property.getProperty("moduleFiles");
+		if(moduleFiles != null && moduleFiles.length() > 0) {
+			this.initFileModel(moduleFiles);
+		}
 		this.templates = FileUtil.getFilesString(templateDir);
 	}
 

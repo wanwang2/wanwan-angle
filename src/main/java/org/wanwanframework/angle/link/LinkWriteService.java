@@ -1,11 +1,9 @@
 package org.wanwanframework.angle.link;
 
 import java.io.IOException;
-import java.util.Map;
 
 import org.wanwanframework.angle.core.param.Path;
 import org.wanwanframwork.file.FileUtil;
-import org.wanwanframwork.file.LineTool;
 
 /**
  * view
@@ -16,7 +14,6 @@ import org.wanwanframwork.file.LineTool;
 public class LinkWriteService {
 
 	private String file;
-	private Map<String, String> properties = LineTool.getLine("./src/main/resources/symbol.properties", "=");
 
 	/**
 	 * write
@@ -33,9 +30,9 @@ public class LinkWriteService {
 	 * @param append
 	 */
 	private void toFileList(LinkMode model, String module, String append) {
-		String dir = Path.ROOT + model.getOutPutPath() + properties.get("l").trim() + module + properties.get("l").trim() + model.getModuleFolder();
+		String dir = Path.ROOT + model.getOutPutPath() + "/" + module + "/" + model.getModuleFolder();
 		String content = "";
-		this.file = dir + properties.get("l").trim() + getModule(module, append);
+		this.file = dir + "/" + getModule(module, append);
 		for (int i = 0; i < model.getFileModels().length; i++) {
 			content += model.getFileModels()[i].getContent() + "\r\n";
 		}
