@@ -1,5 +1,8 @@
 package org.wanwanframework.angle.spiritgirl;
 
+import org.wanwanframework.angle.core.param.Path;
+import org.wanwanframework.angle.express.ExpressCopyController;
+
 public class SpiritgirlController {
 
 	/**
@@ -14,5 +17,13 @@ public class SpiritgirlController {
 	 */
 	public void makeFileContent() {
 		
+	}
+	
+	
+	public void init() {
+		path = ExpressCopyController.class.getResource(Path.RESOURCE_LIST).getPath();
+		readFile(path + "/" + FILE_EXPRESS);
+		readDir(path);
+		write();
 	}
 }
