@@ -1,7 +1,9 @@
 package org.wanwanframework.angle.spiritgirl;
 
-import org.wanwanframework.angle.core.param.Path;
-import org.wanwanframework.angle.express.ExpressCopyController;
+import java.util.Map;
+
+import org.wanwanframwork.file.Log;
+import org.wanwanframwork.file.util.MappingUtil;
 
 public class SpiritgirlController {
 
@@ -19,11 +21,18 @@ public class SpiritgirlController {
 		
 	}
 	
-	
 	public void init() {
-		path = ExpressCopyController.class.getResource(Path.RESOURCE_LIST).getPath();
-		readFile(path + "/" + FILE_EXPRESS);
-		readDir(path);
-		write();
+		
+		String[] resources = new String[]{
+				"./src/main/resources/spirit/param/param.txt",
+				"./src/main/resources/spirit/filelist.txt"};
+		Map<String, String>[] mapArray = MappingUtil.getMapping(resources, ":\t");
+		
+		Log.log(mapArray);
+	}
+	
+	public static void main(String[] args) {
+		SpiritgirlController controller = new SpiritgirlController();
+		controller.init();
 	}
 }
