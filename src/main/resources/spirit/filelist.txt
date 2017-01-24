@@ -1,6 +1,6 @@
 java@folder:			
-	src/main/java/org.wanwanframework.${name};
+	src/main/java/org.wanwanframework.@name;
 test@folder:	
-	src/test/java/org.wanwanframework.${name};
+	src/test/java/org.wanwanframework.@name;
 pom@file:
-	${root}/pom.xml;
+	@root/pom.xml;
