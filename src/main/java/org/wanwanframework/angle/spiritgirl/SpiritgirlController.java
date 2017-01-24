@@ -1,8 +1,10 @@
 package org.wanwanframework.angle.spiritgirl;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
+import org.wanwanframwork.file.FileReader;
 import org.wanwanframwork.file.FileUtil;
 import org.wanwanframwork.file.Log;
 import org.wanwanframwork.file.util.MappingUtil;
@@ -19,6 +21,7 @@ import org.wanwanframwork.file.util.MappingUtil;
 public class SpiritgirlController {
 
 	private Map<String, String> param;
+	private Map<String, String> contentMap = new HashMap<String, String>();
 	
 	public void init() {
 		
@@ -26,9 +29,44 @@ public class SpiritgirlController {
 				"./src/main/resources/spirit/param/param.txt",
 				"./src/main/resources/spirit/filelist.txt"};
 		Map<String, String>[] mapArray = MappingUtil.getMapping(resources, ":\t");
+		
+		String content = FileReader.load("./src/main/resources/spirit/pom.template.xml");
+		contentMap.put("pom", content);
+		
 		param = mapArray[0];
 		processFileStructure(mapArray[1]);
-		Log.log(mapArray);
+		processTemplate(mapArray[1]);
+	}
+	
+	/**
+	 * 最后处理模板文件:得到内容后直接放到路径下面去修改
+	 */
+	private void processTemplate(Map<String, String> map) {
+		String content;
+		for(String key :contentMap.keySet()) {
+			content = contentMap.get(key);
+			content = processFilter(content);
+			modifyFile(key, map, content);
+		}
+	}
+	
+	/**
+	 * 修改文件：通过匹配文件名关键字，把内容写到空文件中
+	 * @param templateKey
+	 * @param map
+	 * @param content
+	 */
+	private void modifyFile(String templateKey, Map<String, String> map, String content) {
+		for(String fileKey: map.keySet()) {
+			if(fileKey.indexOf(templateKey) >= 0) {
+				String path = map.get(fileKey);
+				try {
+					FileUtil.createFile(path, content);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 	
 	/**
@@ -57,7 +95,8 @@ public class SpiritgirlController {
 		for(String key:map.keySet()) {
 			value = map.get(key);
 			value = processFilter(value);
-			processFile(key, value);
+			map.put(key, value); // 修改键值对
+			makeFile(key, value);
 			Log.log("key:" + key + ", value:" + value);
 		}
 	}
@@ -67,7 +106,7 @@ public class SpiritgirlController {
 	 * @param key
 	 * @param value
 	 */
-	private void processFile(String key, String value) {
+	private void makeFile(String key, String value) {
 		
 		if(key.contains("@")) {
 			String keys[] = key.split("@");
