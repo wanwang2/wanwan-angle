@@ -1,2 +1,2 @@
-@root:	E:/git/wanwang/test/wanwan-file-map;
-@name:	map;
+@root:	E:/git/wanwang/test/wanwan-file-date;
+@name:	date;

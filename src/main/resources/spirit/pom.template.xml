@@ -4,7 +4,7 @@
 
 	<groupId>org.wanwanframework.file.@name</groupId>
 	<artifactId>wanwan-file-@name</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>wanwan-file-@name</name>
