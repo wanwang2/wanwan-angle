@@ -30,8 +30,10 @@ public class SpiritgirlController {
 				"./src/main/resources/spirit/filelist.txt"};
 		Map<String, String>[] mapArray = MappingUtil.getMapping(resources, ":\t");
 		
-		String content = FileReader.load("./src/main/resources/spirit/pom.template.xml");
-		contentMap.put("pom", content);
+		String templateFile = "pom.template.xml";
+		String content = FileReader.load("./src/main/resources/spirit/" + templateFile);
+		String contentKey = templateFile.split("\\.")[0];
+		contentMap.put(contentKey, content);
 		
 		param = mapArray[0];
 		processFileStructure(mapArray[1]);
