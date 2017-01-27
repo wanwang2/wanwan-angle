@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.wanwanframework.file.map.MappingUtil;
 import org.wanwanframwork.file.FileReader;
 import org.wanwanframwork.file.FileUtil;
 import org.wanwanframwork.file.Log;
-import org.wanwanframwork.file.util.MappingUtil;
 
 /**
  * 分发格式：

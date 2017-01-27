@@ -1,2 +1,2 @@
-@root:	E:/git/wanwang/test/wanwan-coco;
-@name:	coco;
+@root:	E:/git/wanwang/test/wanwan-file-map;
+@name:	map;
