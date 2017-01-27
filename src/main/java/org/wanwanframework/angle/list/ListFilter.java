@@ -4,11 +4,11 @@ import java.util.Enumeration;
 import java.util.Properties;
 
 import org.wanwanframework.angle.core.FilterImpl;
+import org.wanwanframework.angle.core.Sequence;
 import org.wanwanframework.angle.core.annotation.Symbol;
 import org.wanwanframework.angle.core.area.NodeModel;
 import org.wanwanframework.angle.core.context.Filterable;
 import org.wanwanframwork.file.util.LexUtil;
-import org.wanwanframwork.file.util.Sequence;
 
 @Symbol
 public class ListFilter extends FilterImpl implements Filterable {
