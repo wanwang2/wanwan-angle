@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 import org.wanwanframework.angle.core.FileVo;
 import org.wanwanframework.angle.core.param.Path;
+import org.wanwanframework.file.map.PropertyUtil;
 import org.wanwanframwork.file.FileUtil;
-import org.wanwanframwork.file.resource.PropertyUtil;
 import org.wanwanframwork.file.util.NameUtil;
 
 /**
