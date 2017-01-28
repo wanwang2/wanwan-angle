@@ -24,14 +24,11 @@ public class SpiritgirlController {
 	private Map<String, String> contentMap = new HashMap<String, String>();
 	
 	public void init() {
-		String url = "./src/main/resources/spirit";
-		String[] resources = new String[]{
-				url + "/param/param.txt",
-				url + "/filelist.txt"};
-		Map<String, String>[] mapArray = MappingUtil.getMapping(resources, ":\t");
+		String url = "./src/main/resources/spirit/param";
+		Map<String, String>[] mapArray = MappingUtil.getMapping(url, ":\t");
 		
 		String templateFile = "pom.template.xml";
-		String content = FileReader.load(url + "/" + templateFile);
+		String content = FileReader.load("./src/main/resources/spirit/" + templateFile);
 		String contentKey = templateFile.split("\\.")[0];
 		contentMap.put(contentKey, content);
 		
