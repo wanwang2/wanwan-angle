@@ -111,14 +111,14 @@ public class SpiritgirlController {
 	private void makeFile(String key, String value) {
 		
 		if(key.contains("@")) {
-			String keys[] = key.split("@");
-			if(keys[1].indexOf("file") >= 0) {
+			//String keys[] = key.split("@");
+			if(key.indexOf("@file") >= 0) {
 				try {
 					FileUtil.makeFile(value);
 				} catch (IOException e) { 
 					e.printStackTrace();
 				}
-			} else if(keys[1].indexOf("folder") >= 0) {
+			} else if(key.indexOf("@folder") >= 0) {
 				FileUtil.makeFolder(value);
 			}
 		}
