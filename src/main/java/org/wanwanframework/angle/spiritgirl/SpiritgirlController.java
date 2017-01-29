@@ -31,10 +31,13 @@ public class SpiritgirlController {
 		String content = FileReader.load("./src/main/resources/spirit/" + templateFile);
 		String contentKey = templateFile.split("\\.")[0];
 		contentMap.put(contentKey, content);
-		
-		param = mapArray[0];
-		processFileStructure(mapArray[1]);
-		processTemplate(mapArray[1]);
+		if(mapArray.length > 0) {
+			param = mapArray[0];
+			for(int i = 0; i < mapArray.length - 1; i++) {
+				processFileStructure(mapArray[i + 1]);
+				processTemplate(mapArray[i + 1]);
+			}
+		}
 	}
 	
 	/**
