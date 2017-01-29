@@ -27,10 +27,11 @@ public class SpiritgirlController {
 		String url = "./src/main/resources/spirit/param";
 		Map<String, String>[] mapArray = MappingUtil.getMapping(url, ":\t");
 		
-		String templateFile = "pom.template.xml";
-		String content = FileReader.load("./src/main/resources/spirit/" + templateFile);
-		String contentKey = templateFile.split("\\.")[0];
-		contentMap.put(contentKey, content);
+//		String[] templateArray = FileUtil.readDir("./src/main/resources/spirit", false);
+//		String templateFile = "pom.template.xml";
+//		String content = FileReader.load( + templateFile);
+//		String contentKey = templateFile.split("\\.")[0];
+		contentMap = FileReader.loads("./src/main/resources/spirit/");
 		if(mapArray.length > 0) {
 			param = mapArray[0];
 			for(int i = 0; i < mapArray.length - 1; i++) {
