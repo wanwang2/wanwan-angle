@@ -19,19 +19,15 @@ import org.wanwanframwork.file.Log;
  * 
  */
 public class SpiritgirlController {
-
+	
 	private Map<String, String> param;
-	private Map<String, String> contentMap = new HashMap<String, String>();
+	private Map<String, String> templateMap = new HashMap<String, String>();
 	
 	public void init() {
 		String url = "./src/main/resources/spirit/param";
 		Map<String, String>[] mapArray = MappingUtil.getMapping(url, ":\t");
 		
-//		String[] templateArray = FileUtil.readDir("./src/main/resources/spirit", false);
-//		String templateFile = "pom.template.xml";
-//		String content = FileReader.load( + templateFile);
-//		String contentKey = templateFile.split("\\.")[0];
-		contentMap = FileReader.loads("./src/main/resources/spirit/");
+		templateMap = FileReader.loads("./src/main/resources/spirit/");
 		if(mapArray.length > 0) {
 			param = mapArray[0];
 			for(int i = 0; i < mapArray.length - 1; i++) {
@@ -46,8 +42,8 @@ public class SpiritgirlController {
 	 */
 	private void processTemplate(Map<String, String> map) {
 		String content;
-		for(String key :contentMap.keySet()) {
-			content = contentMap.get(key);
+		for(String key :templateMap.keySet()) {
+			content = templateMap.get(key);
 			content = processFilter(content);
 			modifyFile(key, map, content);
 		}
