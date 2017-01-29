@@ -106,9 +106,7 @@ public class SpiritgirlController {
 	 * @param value
 	 */
 	private void makeFile(String key, String value) {
-		
-		if(key.contains("@")) {
-			//String keys[] = key.split("@");
+		if(key.contains("@")) { 
 			if(key.indexOf("@file") >= 0) {
 				try {
 					FileUtil.makeFile(value);
