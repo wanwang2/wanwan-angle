@@ -27,7 +27,7 @@ public class SpiritgirlController {
 		String url = "./src/main/resources/spirit/param";
 		Map<String, String>[] mapArray = MappingUtil.getMapping(url, ":\t");
 		
-		templateMap = FileReader.loads("./src/main/resources/spirit/");
+		templateMap = FileReader.loads("./src/main/resources/spirit");
 		if(mapArray.length > 0) {
 			param = mapArray[0];
 			for(int i = 0; i < mapArray.length - 1; i++) {
