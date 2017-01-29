@@ -1,0 +1,2 @@
+@root:	E:/git/wanwang/auto/wanwan-file-date;
+@name:	date;
