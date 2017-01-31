@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.wanwanframework.file.map.FilterUtil;
 import org.wanwanframework.file.map.MappingUtil;
 import org.wanwanframwork.file.FileReader;
 import org.wanwanframwork.file.FileUtil;
@@ -44,7 +45,7 @@ public class SpiritgirlController {
 		String content;
 		for(String key :templateMap.keySet()) {
 			content = templateMap.get(key);
-			content = processFilter(content);
+			content = FilterUtil.processFilter(content, param);
 			modifyFile(key, map, content);
 		}
 	}
@@ -69,23 +70,6 @@ public class SpiritgirlController {
 	}
 	
 	/**
-	 * 替换元数据
-	 */
-	private String processFilter(String content) {
-		String value;
-		for(String key:param.keySet()) {
-			value = param.get(key);
-			content = filter(content, key, value);
-			Log.log("key:" + key + ", value:" + value);
-		}
-		return content;
-	}
-	
-	private String filter(String content, String key, String value) {
-		return content = content.replaceAll(key, value);
-	}
-	
-	/**
 	 * 处理文件系统
 	 * @param map
 	 */
@@ -93,7 +77,7 @@ public class SpiritgirlController {
 		String value;
 		for(String key:map.keySet()) {
 			value = map.get(key);
-			value = processFilter(value);
+			value = FilterUtil.processFilter(value, param);
 			map.put(key, value); // 修改键值对
 			makeFile(key, value);
 			Log.log("key:" + key + ", value:" + value);
