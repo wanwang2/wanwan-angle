@@ -15,6 +15,7 @@
 	2.1.2生成的原理依靠resoures\list目录下的模板文件和参数文件
 	
 2.2, 每个包下都有Controller类，里面有main方法的就是工具Controller，执行就能生成相应的代码
+2.3，github格子变绿测试
 	
 
 	
