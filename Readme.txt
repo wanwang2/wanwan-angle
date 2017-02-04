@@ -16,6 +16,7 @@
 	
 2.2, 每个包下都有Controller类，里面有main方法的就是工具Controller，执行就能生成相应的代码
 2.3，github格子变绿测试
+	test变绿
 	
 
 	
