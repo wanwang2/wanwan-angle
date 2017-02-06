@@ -1,12 +1,13 @@
 package org.wanwanframework.angle.list;
 
+import java.util.Map;
 import java.util.Properties;
 
 import org.wanwanframework.angle.core.FileModel;
 import org.wanwanframework.angle.core.FileVo;
 import org.wanwanframework.angle.core.context.Control;
 import org.wanwanframework.angle.core.context.Controller;
-import org.wanwanframework.angle.core.param.Path;
+import org.wanwanframework.file.map.LineTool;
 import org.wanwanframework.file.map.PropertyUtil;
 import org.wanwanframwork.file.FileUtil;
 
@@ -18,6 +19,8 @@ import org.wanwanframwork.file.FileUtil;
  */
 public class ListController extends Controller implements Control {
 
+	private Map<String, String> config;
+	
 	public ListController() {
 		this.writeService = new ListWriteService();
 	}
@@ -76,7 +79,10 @@ public class ListController extends Controller implements Control {
 	 * create a dir file
 	 */
 	public void execute() {
-		path = ListController.class.getResource(Path.RESOURCE_LIST).getPath();
+		//path = ListController.class.getResource(Path.RESOURCE_LIST).getPath();
+		//Log.log(path);
+		config = LineTool.getConfig("./src/main/resources/list/url.txt", ":\t");
+		path = config.get("path");
 		String[] list = FileUtil.readDir(path, true);
 		String file = null;
 		for (int i = 0; i < list.length; i++) {
