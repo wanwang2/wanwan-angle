@@ -2,11 +2,13 @@ package org.wanwanframework.angle.link;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
 
 import org.wanwanframework.angle.core.FileVo;
 import org.wanwanframework.angle.core.param.Path;
+import org.wanwanframework.file.map.LineTool;
 import org.wanwanframework.file.map.PropertyUtil;
 import org.wanwanframwork.file.FileUtil;
 import org.wanwanframwork.file.util.NameUtil;
@@ -19,6 +21,7 @@ import org.wanwanframwork.file.util.NameUtil;
  */
 public class LinkController {
 
+	private Map<String, String> config;
 	private LinkMode model;
 	private Scanner in;
 	private LinkWriteService view = new LinkWriteService();
@@ -98,6 +101,8 @@ public class LinkController {
 	
 	public void execute(){
 		path = LinkController.class.getResource(Path.RESOURCE_LINK).getPath();
+		config = LineTool.getConfig("./src/main/resources/link/url.txt", ":\t");
+		path = config.get("path");
 		String[] list = FileUtil.readDir(path);
 		String file = null;
 		for (int i = 0; i < list.length; i++) {
