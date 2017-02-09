@@ -1,0 +1,1 @@
+path:	E:/git/wanwang/wanwan-orange/config-angle/word/start.txt
