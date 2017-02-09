@@ -1,4 +1,0 @@
-linkFile2
-
-1, this is a File
-2, this File for test.
