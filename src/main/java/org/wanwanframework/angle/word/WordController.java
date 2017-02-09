@@ -2,6 +2,7 @@ package org.wanwanframework.angle.word;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -10,8 +11,10 @@ import org.wanwanframework.angle.core.context.Control;
 import org.wanwanframework.angle.core.context.Controller;
 import org.wanwanframework.angle.core.context.WriteService;
 import org.wanwanframework.angle.core.param.Path;
+import org.wanwanframework.file.map.LineTool;
 import org.wanwanframework.file.map.PropertyUtil;
 import org.wanwanframwork.file.FileUtil;
+import org.wanwanframwork.file.Log;
 import org.wanwanframwork.file.util.NameUtil;
 
 /**
@@ -22,6 +25,8 @@ import org.wanwanframwork.file.util.NameUtil;
  */
 public class WordController extends Controller implements Control{
  
+	private Map<String, String> config;
+	
 	private Scanner in;
 	private WriteService view = new WordWriteService();
 
@@ -92,6 +97,9 @@ public class WordController extends Controller implements Control{
  	 */
  	public void execute(){
  		path = WordController.class.getResource(Path.RESOURCE_WORD).getPath();
+ 		Log.log("path:" + path);
+ 		config = LineTool.getConfig("./src/main/resources/word/url.txt", ":\t");
+		path = config.get("path");
 		String[] list = FileUtil.readDir(path);
 		String file = null;
 		for (int i = 0; i < list.length; i++) {
