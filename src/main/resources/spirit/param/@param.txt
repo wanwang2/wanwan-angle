@@ -1,2 +1,0 @@
-@root:	E:/git/wanwang/auto/wanwan-spirit-girl;
-@name:	spiritgirl;
