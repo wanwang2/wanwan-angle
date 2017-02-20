@@ -2,8 +2,8 @@ package org.wanwanframework.angle.sequencemapping;
 
 public class SequenceMapping {
 
-	private String post;
-	private String struts;
+//	private String post;
+//	private String struts;
 	
 	public void toPost(String post) {
 		
