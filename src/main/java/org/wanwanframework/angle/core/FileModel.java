@@ -13,10 +13,10 @@ public class FileModel {
 	protected String moduleFolder;
 	protected Properties property;
 	protected String outputPath;
-	protected String filePath; 
-	 
-	public FileModel(String filePath, Properties property){
-		this.filePath = filePath;
+	protected String path;
+
+	public FileModel(String path, Properties property){
+		this.path = path;
 		this.property = property;//PropertyUtil.load(filePath + "@.properties");//只有是@.properties才能保证所有模板都在其后面
 		module = property.getProperty("module");
 		moduleFolder = property.getProperty("moduleFolder");
@@ -58,9 +58,8 @@ public class FileModel {
 	public void setOutputPath(String outputPath) {
 		this.outputPath = outputPath;
 	}
-	
-	public String getFileTemplate() {
-		return filePath;
+
+	public String getTemplatePath() {
+		return path;
 	}
-	 
 }
