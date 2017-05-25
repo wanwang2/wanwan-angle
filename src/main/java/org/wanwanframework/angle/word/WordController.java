@@ -58,7 +58,7 @@ public class WordController extends Controller implements Control{
 	public String toFile(String templateType, String module, FileModel vo){
 		String file = null;
 		try {
-			file = model.getFileTemplate() + templateType;
+			file = model.getTemplatePath() + templateType;
 			in = new Scanner(new File(file));
 			toText(module);
 			in.close();

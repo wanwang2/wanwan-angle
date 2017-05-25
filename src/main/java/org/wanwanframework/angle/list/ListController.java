@@ -46,7 +46,7 @@ public class ListController extends Controller implements Control {
 	}
 
 	public String toFile(String templateType, String module, FileModel models) {
-		String file = model.getFileTemplate() + templateType;
+		String file = model.getTemplatePath() + templateType;
 		String content = FileUtil.readFile(file);// 获取文件与字节流中的内容
 		toFilter(content, module, ((ListMode) models).getFileModels());// 过滤文件
 		writeService.write(model, module, templateType);
