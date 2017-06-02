@@ -6,7 +6,7 @@ import java.util.Properties;
 import org.wanwanframework.angle.core.FileModel;
 import org.wanwanframework.angle.core.FileVo;
 import org.wanwanframework.angle.core.context.Control;
-import org.wanwanframework.angle.core.context.Controller;
+import org.wanwanframework.angle.core.context.AngleController;
 import org.wanwanframework.file.map.LineTool;
 import org.wanwanframework.file.map.PropertyUtil;
 import org.wanwanframwork.file.FileUtil;
@@ -17,7 +17,7 @@ import org.wanwanframwork.file.FileUtil;
  * @author lironghai
  * 
  */
-public class ListController extends Controller implements Control {
+public class ListController extends AngleController implements Control {
 
 	private Map<String, String> config;
 	
@@ -78,7 +78,7 @@ public class ListController extends Controller implements Control {
 	/**
 	 * create a dir file
 	 */
-	public void execute() {
+	public void process() {
 		//path = ListController.class.getResource(Path.RESOURCE_LIST).getPath();
 		//Log.log(path);
 		config = LineTool.getConfig("./src/main/resources/list/url.txt", ":\t");
@@ -93,7 +93,6 @@ public class ListController extends Controller implements Control {
 	}
 
 	public static void main(String[] args) {
-		ListController app = new ListController();
-		app.execute();
+		ListController.call(new ListController());
 	}
 }

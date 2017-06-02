@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 import org.wanwanframework.angle.core.FileModel;
 import org.wanwanframework.angle.core.context.Control;
-import org.wanwanframework.angle.core.context.Controller;
+import org.wanwanframework.angle.core.context.AngleController;
 import org.wanwanframework.angle.core.context.WriteService;
 import org.wanwanframework.angle.core.param.Path;
 import org.wanwanframework.file.map.LineTool;
@@ -23,7 +23,7 @@ import org.wanwanframwork.file.util.NameUtil;
  * @author lironghai
  * 
  */
-public class WordController extends Controller implements Control{
+public class WordController extends AngleController implements Control{
  
 	private Map<String, String> config;
 	

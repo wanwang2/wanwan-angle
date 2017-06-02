@@ -4,7 +4,7 @@ import java.util.Properties;
 import java.util.Scanner;
 
 import org.wanwanframework.angle.core.FileVo;
-import org.wanwanframework.angle.core.context.Controller;
+import org.wanwanframework.angle.core.context.AngleController;
 import org.wanwanframework.angle.core.param.Path;
 import org.wanwanframework.file.map.PropertyUtil;
 import org.wanwanframwork.file.FileUtil;
@@ -14,7 +14,7 @@ import org.wanwanframwork.file.FileUtil;
  * @author coco
  *
  */
-public class FolderController extends Controller {
+public class FolderController extends AngleController {
 
 	private FolderWriteService writeService = new FolderWriteService();
 	private Scanner in;
@@ -53,7 +53,7 @@ public class FolderController extends Controller {
 	/**
 	 * create a dir file
 	 */
-	public void execute(){
+	public void process(){
 		path = FolderController.class.getResource(Path.RESOURCE_FOLDER).getPath();
 		String[] list = FileUtil.readDir(path, true);
 		String file = null;
@@ -65,7 +65,6 @@ public class FolderController extends Controller {
 	}
 	
 	public static void main(String[] args) {
-		FolderController controller = new FolderController();
-		controller.execute();
+		FolderController.call(new FolderController());
 	}
 }

@@ -1,11 +1,12 @@
 package org.wanwanframework.angle.core.context;
 
+import org.wanwanframework.angle.core.FileModel;
+import org.wanwanframwork.file.core.FileController;
+
 import java.util.LinkedList;
 import java.util.List;
 
-import org.wanwanframework.angle.core.FileModel;
-
-public abstract class Controller {
+public abstract class AngleController extends FileController{
 	
 	/**
 	 * 已经读取的文件list
