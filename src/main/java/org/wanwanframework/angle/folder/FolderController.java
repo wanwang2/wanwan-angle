@@ -16,7 +16,7 @@ import org.wanwanframwork.file.FileUtil;
  */
 public class FolderController extends AngleController {
 
-	private FolderWriteService writeService = new FolderWriteService();
+	protected FolderWriteService folderWriteService = new FolderWriteService();
 	private Scanner in;
 
 	protected FolderMode getFolderModel() {
@@ -30,7 +30,7 @@ public class FolderController extends AngleController {
 	 */
 	public void read(String path, FileVo[] fileVoList) {
 		String toPath = Path.ROOT + model.getOutputPath() + "/" + model.getModule();
-		writeService.write(path, fileVoList, toPath);
+		folderWriteService.write(path, fileVoList, toPath);
 	}
 
 	public void toText(String module, FileVo fileVo) {
