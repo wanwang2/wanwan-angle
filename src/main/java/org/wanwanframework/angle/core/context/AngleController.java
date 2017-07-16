@@ -6,7 +6,7 @@ import org.wanwanframwork.file.core.FileController;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class AngleController extends FileController{
+public abstract class AngleController<T> extends FileController<T>{
 	
 	/**
 	 * 已经读取的文件list
