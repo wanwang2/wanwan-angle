@@ -1,7 +1,5 @@
 package org.wanwanframework.angle.word;
 
-import java.io.IOException;
-
 import org.wanwanframework.angle.core.FileModel;
 import org.wanwanframework.angle.core.context.WriteService;
 import org.wanwanframework.angle.core.param.Path;
@@ -48,11 +46,7 @@ public class WordWriteService extends WriteService {
 			}
 		}
 		System.out.println(content);
-		try {
-			FileUtil.createFile(this.file, content);
-		} catch (IOException e) { 
-			e.printStackTrace();
-		}
+		FileUtil.createFile(this.file, content);
 	}
 
 }

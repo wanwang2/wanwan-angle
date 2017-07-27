@@ -1,7 +1,6 @@
 package org.wanwanframework.angle.express;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.wanwanframework.angle.core.param.Path;
 import org.wanwanframwork.file.FileUtil;
@@ -37,11 +36,7 @@ public class ExpressCopyController {
 	}
 
 	public void writeFile(String dir) {
-		try {
-			FileUtil.createFileUion(FILE_PROPERTY, dir, express.content);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		FileUtil.createFileUion(FILE_PROPERTY, dir, express.content);
 	}
 
 	public void write() {

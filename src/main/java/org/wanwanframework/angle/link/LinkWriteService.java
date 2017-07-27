@@ -1,7 +1,5 @@
 package org.wanwanframework.angle.link;
 
-import java.io.IOException;
-
 import org.wanwanframework.angle.core.param.Path;
 import org.wanwanframwork.file.FileUtil;
 
@@ -36,11 +34,7 @@ public class LinkWriteService {
 		for (int i = 0; i < model.getFileModels().length; i++) {
 			content += model.getFileModels()[i].getContent() + "\r\n";
 		}
-		try {
-			FileUtil.createFile(file, content);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		FileUtil.createFile(file, content);
 	}
 
 	/**

@@ -1,7 +1,5 @@
 package org.wanwanframework.angle.folder;
 
-import java.io.IOException;
-
 import org.wanwanframework.angle.core.FileVo;
 import org.wanwanframwork.file.FileUtil;
 
@@ -21,11 +19,7 @@ public class FolderWriteService {
 			for (int j = 0; j < moduleList.length; j++) {
 				dir = path + moduleList[j] + "/";
 				String toDir = toPath + "/" + toModule(moduleList[j], fileVoList[i].getName()) + "/";
-				try {
-					FileUtil.copyDir(dir, toDir);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+				FileUtil.copyDir(dir, toDir);
 			}
 		}
 	}
